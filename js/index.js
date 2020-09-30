@@ -79,8 +79,10 @@ document.addEventListener('keyup', function (event) {
 });
 
 // (auxclick) when right click or mouse wheel is clicked text turns red
-
-// document.addEventListener('auxclick')
+document.addEventListener('auxclick', (event) => {
+	logo.style = 'border: 2px solid red';
+	console.log('hi');
+});
 
 // (keydown) pressing escape key cancels all changes
 document.addEventListener('keydown', function (event) {
@@ -90,10 +92,10 @@ document.addEventListener('keydown', function (event) {
 		});
 		btns.forEach((elem) => {
 			elem.style.backgroundColor = '#17A2B8';
-        });
-        h2s.forEach((elem) => {
+		});
+		h2s.forEach((elem) => {
 			elem.style.color = '#000000';
 		});
+		logo.style = 'font-size: 4rem; color: #000000; border: none';
 	}
-	logo.style = 'font-size: 4rem; color: #000000';
 });
