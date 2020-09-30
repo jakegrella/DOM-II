@@ -19,26 +19,9 @@ logo.addEventListener('click', (event) => {
 	logo.style = 'font-size: 8rem';
 });
 
-// not working
-// (wheel) using mouse scroll wheel on img changes size
-// imgs.forEach((elem) => {
-// 	elem.addEventListener('wheel', (event) => {
-// 		console.log('jh');
-// 		console.log(event);
-// 	});
-// });
-
 // (load) when page loads, there is an alert
 // window.addEventListener('load', (event) => {
 // 	alert('Page has loaded!');
-// });
-
-//doesn't work
-// (focus) focus on nav links when page loads
-// window.onload.navLinks.forEach((elem) => {
-// 	elem.addEventListener('focus', (event) => {
-// 		event.target.style.border = 'red';
-// 	});
 // });
 
 // (resize) when window resizes, change color of logo
@@ -53,14 +36,6 @@ h2s.forEach((elem) => {
 		elem.style.color = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 	});
 });
-
-// doesn't work
-// (select)
-// function colorSelection(event) {
-//     console.log(event)
-//     ps.style.color = 'red'
-// }
-// window.addEventListener('select', colorSelection)
 
 // (dblclick) double click on logo decreases size
 logo.addEventListener('dblclick', (event) => {
@@ -84,6 +59,20 @@ document.addEventListener('auxclick', (event) => {
 	console.log('hi');
 });
 
+// (mouseenter) when mouse leaves image, border is applied
+imgs.forEach((elem) => {
+	elem.addEventListener('mouseenter', (event) => {
+		elem.style = 'border: none';
+	});
+});
+
+// (mouseout) when mouse leaves image, border is applied
+imgs.forEach((elem) => {
+	elem.addEventListener('mouseout', (event) => {
+		elem.style = 'border: 10px dotted blue';
+	});
+});
+
 // (keydown) pressing escape key cancels all changes
 document.addEventListener('keydown', function (event) {
 	if (event.key === 'Escape') {
@@ -95,7 +84,35 @@ document.addEventListener('keydown', function (event) {
 		});
 		h2s.forEach((elem) => {
 			elem.style.color = '#000000';
-		});
+        });
+        imgs.forEach((elem) => {
+            elem.style = 'border: none';
+        });
 		logo.style = 'font-size: 4rem; color: #000000; border: none';
 	}
 });
+
+//doesn't work
+// (focus) focus on nav links when page loads
+// window.onload.navLinks.forEach((elem) => {
+// 	elem.addEventListener('focus', (event) => {
+// 		event.target.style.border = 'red';
+// 	});
+// });
+
+// doesn't work
+// (select)
+// function colorSelection(event) {
+//     console.log(event)
+//     ps.style.color = 'red'
+// }
+// window.addEventListener('select', colorSelection)
+
+// not working
+// (wheel) using mouse scroll wheel on img changes size
+// imgs.forEach((elem) => {
+// 	elem.addEventListener('wheel', (event) => {
+// 		console.log('jh');
+// 		console.log(event);
+// 	});
+// });
